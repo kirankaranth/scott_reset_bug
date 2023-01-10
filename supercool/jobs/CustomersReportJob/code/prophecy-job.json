@@ -1,0 +1,130 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "1405",
+    "jobId" : "jobs/CustomersReportJob",
+    "name" : "CustomersReportJob",
+    "schedule" : "0 0/30 * * * ? *",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "Small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "1405",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ]
+  },
+  "processes" : {
+    "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs" : {
+      "id" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "customers_orders",
+        "slug" : "customers_orders",
+        "x" : 654.7999877929688,
+        "y" : 287.20001220703125
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-T6HJLGzRcF3xEQF142zg$$JZZV1AYg4jHV4HUvLAmM_"
+        } ],
+        "outputs" : [ {
+          "id" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/customers_orders",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "MySuperCoolProject" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "btciwcYAhXA006SgK-5UN$$lak7bH7l3cEf_Yzpn9ecN" : {
+      "id" : "btciwcYAhXA006SgK-5UN$$lak7bH7l3cEf_Yzpn9ecN",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers_1",
+        "slug" : "report_top_customers",
+        "x" : 941.5999755859375,
+        "y" : 284.79998779296875
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n54v1fBr_biQ_lJqRNzxc$$qQ-NTN6y6mlB3CsKnvry1"
+        } ],
+        "outputs" : [ {
+          "id" : "tDg3Rp7d3uK28rRo53mAo$$4vTeYewVZt8vUi9v9qJyL"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "MySuperCoolProject" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "vN80FTM1Ko8TskQfmFsXA",
+    "source" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+    "target" : "btciwcYAhXA006SgK-5UN$$lak7bH7l3cEf_Yzpn9ecN",
+    "sourcePort" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg",
+    "targetPort" : "n54v1fBr_biQ_lJqRNzxc$$qQ-NTN6y6mlB3CsKnvry1"
+  } ]
+}
