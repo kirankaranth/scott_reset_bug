@@ -13,10 +13,49 @@ pipelines:
     language: python
     createdAt: '2023-01-10 15:50:30'
     datasets:
-      inputs: []
-      outputs: []
+      inputs:
+      - datasets/customers
+      - datasets/orders
+      outputs:
+      - datasets/customers_orders
     dependencies: {}
-datasets: {}
+datasets:
+  datasets/orders:
+    name: orders
+    description: ''
+    author: scott+demo3@prophecy.io
+    createdAt: '2023-01-10 16:00:25'
+    physicalDatasets:
+      dev:
+        fabricId: 1405
+        datasetType: File
+        description: ''
+        author: scott+demo3@prophecy.io
+        createdAt: '2023-01-10 16:00:25'
+  datasets/customers:
+    name: customers
+    description: ''
+    author: scott+demo3@prophecy.io
+    createdAt: '2023-01-10 16:02:38'
+    physicalDatasets:
+      dev:
+        fabricId: 1405
+        datasetType: File
+        description: ''
+        author: scott+demo3@prophecy.io
+        createdAt: '2023-01-10 16:02:38'
+  datasets/customers_orders:
+    name: customers_orders
+    description: ''
+    author: scott+demo3@prophecy.io
+    createdAt: '2023-01-10 16:26:33'
+    physicalDatasets:
+      dev:
+        fabricId: 1405
+        datasetType: Database
+        description: ''
+        author: scott+demo3@prophecy.io
+        createdAt: '2023-01-10 16:26:33'
 templates: {}
 jobs: {}
 libraries: []

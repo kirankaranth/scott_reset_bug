@@ -7,7 +7,12 @@ from prophecy.utils import *
 from customers_orders.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    pass
+    df_orders = orders(spark)
+    df_customers = customers(spark)
+    df_By_CustomerId = By_CustomerId(spark, df_orders, df_customers)
+    df_Cleanup = Cleanup(spark, df_By_CustomerId)
+    df_SumAmounts = SumAmounts(spark, df_Cleanup)
+    Customers_Orders(spark, df_SumAmounts)
 
 def main():
     spark = SparkSession.builder\
