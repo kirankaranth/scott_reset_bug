@@ -14,3 +14,7 @@ Broken unit test
 *** Release notes for version: 0.0.3 ***
 
 My first job!
+
+*** Release notes for version: 0.0.4 ***
+
+Version bump
