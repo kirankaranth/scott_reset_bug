@@ -1,6 +1,6 @@
 name: MySuperCoolProject
 description: ''
-version: 0.0.1
+version: 0.0.2
 author: scott+demo3@prophecy.io
 language: python
 buildSystem: wheel
