@@ -145,6 +145,32 @@ jobs:
     enabled: true
     createdAt: '2023-01-10 18:18:14'
     author: scott+demo3@prophecy.io
+  jobs/ProdJob:
+    name: ProdJob
+    description: ''
+    fabricUID: 1405
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: Small
+    scheduleCron: 0 0 0 1/1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/report_top_customers
+    - pipelines/customers_orders
+    - pipelines/MyMetaPipeline
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-01-11 15:53:15'
+    author: scott+demo3@prophecy.io
 libraries: []
 subgraphs: {}
 sqlModels: {}

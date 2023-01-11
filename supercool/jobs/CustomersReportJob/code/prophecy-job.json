@@ -125,8 +125,8 @@
       "metadata" : {
         "label" : "report_top_customers_3",
         "slug" : "report_top_customers",
-        "x" : 942.3999633789062,
-        "y" : 151.8000030517578
+        "x" : 921.9999389648438,
+        "y" : 106.20000457763672
       },
       "ports" : {
         "inputs" : [ {
@@ -287,8 +287,8 @@
       "metadata" : {
         "label" : "report_top_customers_1",
         "slug" : "report_top_customers",
-        "x" : 941.5999755859375,
-        "y" : 284.79998779296875
+        "x" : 921.199951171875,
+        "y" : 239.19998168945312
       },
       "ports" : {
         "inputs" : [ {
@@ -341,8 +341,8 @@
       "metadata" : {
         "label" : "report_top_customers_2",
         "slug" : "report_top_customers",
-        "x" : 941.5999755859375,
-        "y" : 16.200000762939453
+        "x" : 921.199951171875,
+        "y" : -29.399999618530273
       },
       "ports" : {
         "inputs" : [ {
