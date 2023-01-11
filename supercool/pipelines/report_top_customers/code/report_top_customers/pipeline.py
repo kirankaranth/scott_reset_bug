@@ -31,6 +31,16 @@ def pipeline(spark: SparkSession) -> None:
         "fMVxortz3BGKVEB--u8VU$$9nns4Mv-GFMjg5cu41vJ5", 
         "n8Lt1SS_t2xg2F0hGDh14$$aqPkEXWP6nDoOI3akIhbC"
     )
+    df_Filter_1 = Filter_1(spark, df_customers_orders_0)
+    df_Filter_1 = collectMetrics(
+        spark, 
+        df_Filter_1, 
+        "graph", 
+        "w2zbfoPhfVQjrt5_a3oN1$$Dlni5i70bA6BhiwDUTpka", 
+        "XaJUz-6P0gdtLruirTpi7$$ZbKZgvrXwl1aKgFicmpCr"
+    )
+    df_Filter_1.cache().count()
+    df_Filter_1.unpersist()
     df_Top10 = Top10(spark, df_ByTotalAmount)
     df_Top10 = collectMetrics(
         spark, 
@@ -76,6 +86,16 @@ def pipeline(spark: SparkSession) -> None:
     )
     df_SchemaTransform_1.cache().count()
     df_SchemaTransform_1.unpersist()
+    df_customers_orders_1 = customers_orders_1(spark)
+    df_customers_orders_1 = collectMetrics(
+        spark, 
+        df_customers_orders_1, 
+        "graph", 
+        "NpGnZxbC1W9dKLJ20sroc$$xYXEl5J_lrA1PdQmkKQow", 
+        "fnTYhE5m3Df6WffuV7Yol$$HQtgzWaq0ZX2y98ljVN92"
+    )
+    df_customers_orders_1.cache().count()
+    df_customers_orders_1.unpersist()
 
 def main():
     spark = SparkSession.builder\

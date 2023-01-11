@@ -5,6 +5,19 @@ author: scott+demo3@prophecy.io
 language: python
 buildSystem: wheel
 pipelines:
+  pipelines/report_top_customers:
+    name: report_top_customers
+    description: ''
+    author: scott+demo3@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-10 18:02:54'
+    datasets:
+      inputs:
+      - datasets/customers_orders
+      outputs:
+      - datasets/report_top_customers
+    dependencies: {}
   pipelines/customers_orders:
     name: customers_orders
     description: ''
@@ -18,19 +31,6 @@ pipelines:
       - datasets/orders
       outputs:
       - datasets/customers_orders
-    dependencies: {}
-  pipelines/report_top_customers:
-    name: report_top_customers
-    description: ''
-    author: scott+demo3@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2023-01-10 18:02:54'
-    datasets:
-      inputs:
-      - datasets/customers_orders
-      outputs:
-      - datasets/report_top_customers
     dependencies: {}
 datasets:
   datasets/orders:
