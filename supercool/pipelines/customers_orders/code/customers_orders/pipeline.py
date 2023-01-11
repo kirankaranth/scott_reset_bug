@@ -41,6 +41,16 @@ def pipeline(spark: SparkSession) -> None:
         "njxDmpL-AZxfQkJfbmjf6$$ioHwtNMH0FzuI2PDne7IR"
     )
     Customers_Orders(spark, df_SumAmounts)
+    df_SchemaTransform_2 = SchemaTransform_2(spark, df_By_CustomerId)
+    df_SchemaTransform_2 = collectMetrics(
+        spark, 
+        df_SchemaTransform_2, 
+        "graph", 
+        "TVTWx852GgqwxetK6PEip$$LtgWJdPBWqgQXu-M4HF0Y", 
+        "IT7so1xe75UXoiui4aSQM$$IPD3PiwG_H18MDwehkhTS"
+    )
+    df_SchemaTransform_2.cache().count()
+    df_SchemaTransform_2.unpersist()
     Script_1(spark, df_SumAmounts)
 
 def main():
