@@ -1,0 +1,8 @@
+version: 1
+configurations:
+- top_15
+- default
+- top_50
+- top_1000
+- top_100
+dependencies: []

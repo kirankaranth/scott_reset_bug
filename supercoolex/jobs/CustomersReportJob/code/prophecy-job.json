@@ -1,0 +1,454 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "1405",
+    "jobId" : "jobs/CustomersReportJob",
+    "name" : "CustomersReportJob",
+    "schedule" : "0 0/30 * * * ? *",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "Small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "1405",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ]
+  },
+  "processes" : {
+    "IFtXPMknEZsPxp2tTa3pv$$RbBjqVVnAUBxNXjYAFKgA" : {
+      "id" : "IFtXPMknEZsPxp2tTa3pv$$RbBjqVVnAUBxNXjYAFKgA",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "MyMetaPipeline_1",
+        "slug" : "MyMetaPipeline",
+        "x" : 1270.5142822265625,
+        "y" : 280.73809814453125
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5BVb-r4xm762uTnSqgaYR$$TuSVSmjYXZqE9Txp1K8yV"
+        } ],
+        "outputs" : [ {
+          "id" : "1Q1KR3pyIfWJE_gOrGa_p$$ukwD_RrdGGbff6TSqrSRy"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/MyMetaPipeline",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "MySuperCoolProject" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs" : {
+      "id" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "customers_orders",
+        "slug" : "customers_orders",
+        "x" : 654.7999877929688,
+        "y" : 287.20001220703125
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-T6HJLGzRcF3xEQF142zg$$JZZV1AYg4jHV4HUvLAmM_"
+        } ],
+        "outputs" : [ {
+          "id" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/customers_orders",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "MySuperCoolProject" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "3XbpBDNBIM23gc24JZUgU$$z7Bh5iuxJcD-aaHhcV31J" : {
+      "id" : "3XbpBDNBIM23gc24JZUgU$$z7Bh5iuxJcD-aaHhcV31J",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers_3",
+        "slug" : "report_top_customers",
+        "x" : 942.3999633789062,
+        "y" : 151.8000030517578
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TZSzqVCXryoSsb2Ut8Fbq$$5LUMXiv-rzEa5f8PL-lRz"
+        } ],
+        "outputs" : [ {
+          "id" : "VXVngT5Wt8D1EF3ff7iEi$$YhtrHR8v9VOyWaipusNXr"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "top_count",
+            "kind" : {
+              "type" : "int",
+              "value" : 15
+            },
+            "optional" : false,
+            "comment" : "Max number of top customers"
+          }, {
+            "name" : "todays_date",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "current_date()"
+            },
+            "optional" : false,
+            "comment" : ""
+          } ],
+          "instances" : {
+            "MySuperCoolProject" : [ "top_15", "default", "top_50", "top_1000", "top_100" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "top_15"
+        }
+      }
+    },
+    "F_F2no9huM39_xAAveYz3$$P8ufr65OqqIXIVQBPNDUT" : {
+      "id" : "F_F2no9huM39_xAAveYz3$$P8ufr65OqqIXIVQBPNDUT",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers_4",
+        "slug" : "report_top_customers",
+        "x" : 934.7999877929688,
+        "y" : 450.6000061035156
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TKOM6iAiOonBvYC8LCmkV$$n93i2Cqj_JpOonnU3DGuE"
+        } ],
+        "outputs" : [ {
+          "id" : "skm98UwC0G2ThQoemavDW$$wgEEfN5yXqVTSBeQXtCBv"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "top_count",
+            "kind" : {
+              "type" : "int",
+              "value" : 100
+            },
+            "optional" : false,
+            "comment" : "Max number of top customers"
+          }, {
+            "name" : "todays_date",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "current_date()"
+            },
+            "optional" : false,
+            "comment" : ""
+          } ],
+          "instances" : {
+            "MySuperCoolProject" : [ "top_15", "default", "top_50", "top_1000", "top_100" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "top_100"
+        }
+      }
+    },
+    "8yZjJeQv9oG_35oZC7421$$e1jB7ulHxI9RnFgrAjcHT" : {
+      "id" : "8yZjJeQv9oG_35oZC7421$$e1jB7ulHxI9RnFgrAjcHT",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers_5",
+        "slug" : "report_top_customers",
+        "x" : 933.2571411132812,
+        "y" : 596
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0u5Yh3jICCgLgUlQp6BuY$$FwoltMBnAN5fxNk88CzWH"
+        } ],
+        "outputs" : [ {
+          "id" : "B9FoFbPHse48Y4_n4GC_P$$5LIdQlH7s5xfwsUF3jEpi"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "top_count",
+            "kind" : {
+              "type" : "int",
+              "value" : 1000
+            },
+            "optional" : false,
+            "comment" : "Max number of top customers"
+          }, {
+            "name" : "todays_date",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "current_date()"
+            },
+            "optional" : false,
+            "comment" : ""
+          } ],
+          "instances" : {
+            "MySuperCoolProject" : [ "top_15", "default", "top_50", "top_1000", "top_100" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "top_1000"
+        }
+      }
+    },
+    "btciwcYAhXA006SgK-5UN$$lak7bH7l3cEf_Yzpn9ecN" : {
+      "id" : "btciwcYAhXA006SgK-5UN$$lak7bH7l3cEf_Yzpn9ecN",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers_1",
+        "slug" : "report_top_customers",
+        "x" : 941.5999755859375,
+        "y" : 284.79998779296875
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n54v1fBr_biQ_lJqRNzxc$$qQ-NTN6y6mlB3CsKnvry1"
+        } ],
+        "outputs" : [ {
+          "id" : "tDg3Rp7d3uK28rRo53mAo$$4vTeYewVZt8vUi9v9qJyL"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "top_count",
+            "kind" : {
+              "type" : "int",
+              "value" : 50
+            },
+            "optional" : false,
+            "comment" : "Max number of top customers"
+          }, {
+            "name" : "todays_date",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "current_date()"
+            },
+            "optional" : false,
+            "comment" : ""
+          } ],
+          "instances" : {
+            "MySuperCoolProject" : [ "top_15", "default", "top_50", "top_1000", "top_100" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "top_50"
+        }
+      }
+    },
+    "6HywWC09KgObnNEei1cJq$$A20fHQhi9eba-YvUDCNYe" : {
+      "id" : "6HywWC09KgObnNEei1cJq$$A20fHQhi9eba-YvUDCNYe",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers_2",
+        "slug" : "report_top_customers",
+        "x" : 941.5999755859375,
+        "y" : 16.200000762939453
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Av-B1w5k15lgTQxVcRuir$$BqKcfUHSa7FgHBnMUqADq"
+        } ],
+        "outputs" : [ {
+          "id" : "LPJDB2ILu1Sg3m9iWFnuR$$NkrWi1bhlV8F7CiSyYrVk"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "top_count",
+            "kind" : {
+              "type" : "int",
+              "value" : 10
+            },
+            "optional" : false,
+            "comment" : "Max number of top customers"
+          }, {
+            "name" : "todays_date",
+            "kind" : {
+              "type" : "spark_expression",
+              "value" : "current_date()"
+            },
+            "optional" : false,
+            "comment" : ""
+          } ],
+          "instances" : {
+            "MySuperCoolProject" : [ "top_15", "default", "top_50", "top_1000", "top_100" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "vN80FTM1Ko8TskQfmFsXA",
+    "source" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+    "target" : "btciwcYAhXA006SgK-5UN$$lak7bH7l3cEf_Yzpn9ecN",
+    "sourcePort" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg",
+    "targetPort" : "n54v1fBr_biQ_lJqRNzxc$$qQ-NTN6y6mlB3CsKnvry1"
+  }, {
+    "id" : "vHMQrhqixAkUr4A7AuO7f",
+    "source" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+    "target" : "6HywWC09KgObnNEei1cJq$$A20fHQhi9eba-YvUDCNYe",
+    "sourcePort" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg",
+    "targetPort" : "Av-B1w5k15lgTQxVcRuir$$BqKcfUHSa7FgHBnMUqADq"
+  }, {
+    "id" : "a0jjWslZVhunCgh0Wxpun",
+    "source" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+    "target" : "3XbpBDNBIM23gc24JZUgU$$z7Bh5iuxJcD-aaHhcV31J",
+    "sourcePort" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg",
+    "targetPort" : "TZSzqVCXryoSsb2Ut8Fbq$$5LUMXiv-rzEa5f8PL-lRz"
+  }, {
+    "id" : "ZjiAPC3dzDAGnBBKz579f",
+    "source" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+    "target" : "F_F2no9huM39_xAAveYz3$$P8ufr65OqqIXIVQBPNDUT",
+    "sourcePort" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg",
+    "targetPort" : "TKOM6iAiOonBvYC8LCmkV$$n93i2Cqj_JpOonnU3DGuE"
+  }, {
+    "id" : "_6sDi3Dlme6rzjpy0nvh-",
+    "source" : "6HywWC09KgObnNEei1cJq$$A20fHQhi9eba-YvUDCNYe",
+    "target" : "IFtXPMknEZsPxp2tTa3pv$$RbBjqVVnAUBxNXjYAFKgA",
+    "sourcePort" : "LPJDB2ILu1Sg3m9iWFnuR$$NkrWi1bhlV8F7CiSyYrVk",
+    "targetPort" : "5BVb-r4xm762uTnSqgaYR$$TuSVSmjYXZqE9Txp1K8yV"
+  }, {
+    "id" : "DSq9g1UnbhXRcyKsDvPVo",
+    "source" : "3XbpBDNBIM23gc24JZUgU$$z7Bh5iuxJcD-aaHhcV31J",
+    "target" : "IFtXPMknEZsPxp2tTa3pv$$RbBjqVVnAUBxNXjYAFKgA",
+    "sourcePort" : "VXVngT5Wt8D1EF3ff7iEi$$YhtrHR8v9VOyWaipusNXr",
+    "targetPort" : "5BVb-r4xm762uTnSqgaYR$$TuSVSmjYXZqE9Txp1K8yV"
+  }, {
+    "id" : "bQv1tBu68CxFTU-ps8687",
+    "source" : "btciwcYAhXA006SgK-5UN$$lak7bH7l3cEf_Yzpn9ecN",
+    "target" : "IFtXPMknEZsPxp2tTa3pv$$RbBjqVVnAUBxNXjYAFKgA",
+    "sourcePort" : "tDg3Rp7d3uK28rRo53mAo$$4vTeYewVZt8vUi9v9qJyL",
+    "targetPort" : "5BVb-r4xm762uTnSqgaYR$$TuSVSmjYXZqE9Txp1K8yV"
+  }, {
+    "id" : "xNMP_wbEI-VqSP2gWmG3X",
+    "source" : "F_F2no9huM39_xAAveYz3$$P8ufr65OqqIXIVQBPNDUT",
+    "target" : "IFtXPMknEZsPxp2tTa3pv$$RbBjqVVnAUBxNXjYAFKgA",
+    "sourcePort" : "skm98UwC0G2ThQoemavDW$$wgEEfN5yXqVTSBeQXtCBv",
+    "targetPort" : "5BVb-r4xm762uTnSqgaYR$$TuSVSmjYXZqE9Txp1K8yV"
+  }, {
+    "id" : "fEjZqbiZO5ktREotkyvmQ",
+    "source" : "dN4yelbDCYHEys2ZBMFyH$$W-rNrpQjkxE2CY64PwqQs",
+    "target" : "8yZjJeQv9oG_35oZC7421$$e1jB7ulHxI9RnFgrAjcHT",
+    "sourcePort" : "kiSEJv3AtEGTwCJgV5xiN$$-mPOjkVVRoKc7b1uSOFRg",
+    "targetPort" : "0u5Yh3jICCgLgUlQp6BuY$$FwoltMBnAN5fxNk88CzWH"
+  }, {
+    "id" : "8OMYc9UrUhxupiL7LmjCM",
+    "source" : "8yZjJeQv9oG_35oZC7421$$e1jB7ulHxI9RnFgrAjcHT",
+    "target" : "IFtXPMknEZsPxp2tTa3pv$$RbBjqVVnAUBxNXjYAFKgA",
+    "sourcePort" : "B9FoFbPHse48Y4_n4GC_P$$5LIdQlH7s5xfwsUF3jEpi",
+    "targetPort" : "5BVb-r4xm762uTnSqgaYR$$TuSVSmjYXZqE9Txp1K8yV"
+  } ]
+}

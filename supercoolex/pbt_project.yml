@@ -5,31 +5,6 @@ author: scott+demo3@prophecy.io
 language: python
 buildSystem: wheel
 pipelines:
-  pipelines/MyMetaPipeline:
-    name: MyMetaPipeline
-    description: ''
-    author: scott+demo3@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2023-01-11 15:16:50'
-    datasets:
-      inputs:
-      - datasets/component_runs
-      - datasets/pipeline_runs
-      outputs: []
-    dependencies: {}
-  pipelines/SubgraphPipeline:
-    name: SubgraphPipeline
-    description: null
-    author: scott+demo3@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2023-01-11 16:28:48'
-    datasets:
-      inputs:
-      - datasets/customers
-      outputs: []
-    dependencies: {}
   pipelines/customers_orders:
     name: customers_orders
     description: ''
@@ -43,6 +18,19 @@ pipelines:
       - datasets/orders
       outputs:
       - datasets/customers_orders
+    dependencies: {}
+  pipelines/MyMetaPipeline:
+    name: MyMetaPipeline
+    description: ''
+    author: scott+demo3@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-11 15:16:50'
+    datasets:
+      inputs:
+      - datasets/component_runs
+      - datasets/pipeline_runs
+      outputs: []
     dependencies: {}
   pipelines/report_top_customers:
     name: report_top_customers
@@ -157,46 +145,8 @@ jobs:
     enabled: true
     createdAt: '2023-01-10 18:18:14'
     author: scott+demo3@prophecy.io
-  jobs/ProdJob:
-    name: ProdJob
-    description: ''
-    fabricUID: 1405
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: Small
-    scheduleCron: 0 0 0 1/1 * ? *
-    timeout: null
-    alerting:
-      emails: ''
-      onStart: false
-      onSuccess: false
-      onFailure: false
-    pipelines:
-    - pipelines/report_top_customers
-    - pipelines/customers_orders
-    - pipelines/MyMetaPipeline
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: null
-    createdAt: '2023-01-11 15:53:15'
-    author: scott+demo3@prophecy.io
 libraries: []
-subgraphs:
-  subgraphs/TopX_Subgraph:
-    name: TopX_Subgraph
-    description: ''
-    author: scott+demo3@prophecy.io
-    language: python
-    createdAt: '2023-01-11 16:28:19'
-  subgraphs/Cleanup_Subgraph:
-    name: Account_Length_Subgraph
-    description: null
-    author: scott+demo3@prophecy.io
-    language: python
-    createdAt: '2023-01-11 16:34:12'
+subgraphs: {}
 sqlModels: {}
 sqlPipeline: null
 dependencies: []
