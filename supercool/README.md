@@ -22,3 +22,7 @@ Version bump
 *** Release notes for version: 0.0.5 ***
 
 Enabling job metrics
+
+*** Release notes for version: 0.0.6 ***
+
+Job release
