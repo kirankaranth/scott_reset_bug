@@ -49,17 +49,9 @@ def pipeline(spark: SparkSession) -> None:
         "TVTWx852GgqwxetK6PEip$$LtgWJdPBWqgQXu-M4HF0Y", 
         "IT7so1xe75UXoiui4aSQM$$IPD3PiwG_H18MDwehkhTS"
     )
+    df_SchemaTransform_2.cache().count()
+    df_SchemaTransform_2.unpersist()
     Script_1(spark, df_SumAmounts)
-    df_Limit_1 = Limit_1(spark, df_SchemaTransform_2)
-    df_Limit_1 = collectMetrics(
-        spark, 
-        df_Limit_1, 
-        "graph", 
-        "oFaq993hO7ySi9M0z2XBV$$QEidPf-tRXlceMqH65bRo", 
-        "lSbFUMvdK_y4SJ7j9KLQm$$3B9SZFZI-AubRpuoBMdiW"
-    )
-    df_Limit_1.cache().count()
-    df_Limit_1.unpersist()
 
 def main():
     spark = SparkSession.builder\
