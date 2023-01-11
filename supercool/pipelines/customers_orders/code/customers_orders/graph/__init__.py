@@ -3,6 +3,7 @@ from .Customers_Orders import *
 from .SchemaTransform_3 import *
 from .Account_Length_Subgraph import *
 from .By_CustomerId import *
+from .SchemaTransform_4 import *
 from .customers import *
 from .SchemaTransform_2 import *
 from .SumAmounts import *

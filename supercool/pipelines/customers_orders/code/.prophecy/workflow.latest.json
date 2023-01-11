@@ -56,12 +56,6 @@
     "target" : "93DFXOMtuH2f5Xq4_Cdqi$$rh2cfpyFIjbj53qu0U5IZ",
     "targetPort" : "PGXmyzeba_Vvs0PSTQsKq$$6T8Y5kGfMVSDpmoJvfI6w"
   }, {
-    "id" : "TARtTrJwvcCR3Eug9n71q",
-    "source" : "CJrTkjxKezt0GaymeWYQ4$$rOqyJaqbqDFgtklKNC1v9",
-    "sourcePort" : "njxDmpL-AZxfQkJfbmjf6$$ioHwtNMH0FzuI2PDne7IR",
-    "target" : "EpOXFF_RUruo4Lr9BRHTA$$lKJHIGAiRnZCTJH-ya7aw",
-    "targetPort" : "yrBMTJ9iGw_f2mjbL_59F$$EoFN2VO8ONY7Eo6CCpVJt"
-  }, {
     "id" : "eC0HSCB2viAwDYXqhF-qi",
     "source" : "93DFXOMtuH2f5Xq4_Cdqi$$rh2cfpyFIjbj53qu0U5IZ",
     "sourcePort" : "l5_p0m9fgJ32uNjyozV2h$$jA94aU8AnriJNBCAcOjEM",
@@ -91,6 +85,18 @@
     "sourcePort" : "IT7so1xe75UXoiui4aSQM$$IPD3PiwG_H18MDwehkhTS",
     "target" : "XaVC9pgck1nG0bzdgukNj$$_bJUizP20RHabJp92FcQZ",
     "targetPort" : "DL8Br9gI-w2lkfHiFBRc7$$8Rqx0VcGbMuWu42F3eyBO"
+  }, {
+    "id" : "BO0V6WrhC8D-XKkY4PMRs",
+    "source" : "CJrTkjxKezt0GaymeWYQ4$$rOqyJaqbqDFgtklKNC1v9",
+    "sourcePort" : "njxDmpL-AZxfQkJfbmjf6$$ioHwtNMH0FzuI2PDne7IR",
+    "target" : "Aqup0HfHHhVSBmBLMzHEH$$plNH6Cq80t5xwXlSlGKSd",
+    "targetPort" : "OEOhoNerAb6q2cls0LXsm$$NosOW8SPY8bsWl8R9kvzk"
+  }, {
+    "id" : "1tJoZnV11dt_Fg3wVEbxp",
+    "source" : "Aqup0HfHHhVSBmBLMzHEH$$plNH6Cq80t5xwXlSlGKSd",
+    "sourcePort" : "vCeOkxxCet_4pb3qv1dBz$$NeBomQDBsObqXUlcef-HR",
+    "target" : "EpOXFF_RUruo4Lr9BRHTA$$lKJHIGAiRnZCTJH-ya7aw",
+    "targetPort" : "yrBMTJ9iGw_f2mjbL_59F$$EoFN2VO8ONY7Eo6CCpVJt"
   } ],
   "processes" : {
     "TpAXrbHgsX2zayYfL-U9a$$ftBKqC-25QhQkU4NMf6UI" : {
@@ -304,8 +310,8 @@
       "metadata" : {
         "label" : "Customers_Orders",
         "slug" : "Customers_Orders",
-        "x" : 873.9750000000001,
-        "y" : 228.69999999999996,
+        "x" : 945.9750000000001,
+        "y" : 239.49999999999991,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -531,6 +537,52 @@
       "properties" : {
         "columnsSelector" : [ ],
         "transformations" : [ ]
+      }
+    },
+    "Aqup0HfHHhVSBmBLMzHEH$$plNH6Cq80t5xwXlSlGKSd" : {
+      "id" : "Aqup0HfHHhVSBmBLMzHEH$$plNH6Cq80t5xwXlSlGKSd",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_4",
+        "slug" : "SchemaTransform_4",
+        "x" : 815.4187500000002,
+        "y" : 238.84999999999997,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OEOhoNerAb6q2cls0LXsm$$NosOW8SPY8bsWl8R9kvzk",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "vCeOkxxCet_4pb3qv1dBz$$NeBomQDBsObqXUlcef-HR",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "transformations" : [ {
+          "kind" : "AddReplaceColumn",
+          "AddReplaceColumn" : {
+            "sourceColumn" : "customer_is_cool",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "true"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          }
+        } ]
       }
     }
   },

@@ -4,5 +4,5 @@ from pyspark.sql.types import *
 from customers_orders.config.ConfigStore import *
 from customers_orders.udfs.UDFs import *
 
-def Customers_Orders(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").option("mergeSchema", True).mode("overwrite").saveAsTable(f"scottdemo.customers_orders")
+def SchemaTransform_4(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.withColumn("customer_is_cool", lit(True))

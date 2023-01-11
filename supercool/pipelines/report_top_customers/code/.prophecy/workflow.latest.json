@@ -137,13 +137,19 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "slUslARxay1K-4K_4UoVM$$was0Sl_PAJ_hdvK4DpYRm##amounts" ],
+        "columnsSelector" : [ "slUslARxay1K-4K_4UoVM$$was0Sl_PAJ_hdvK4DpYRm##amounts", "slUslARxay1K-4K_4UoVM$$was0Sl_PAJ_hdvK4DpYRm##customer_is_cool" ],
         "orders" : [ {
           "expression" : {
             "format" : "sql",
             "expression" : "amounts"
           },
           "sortType" : "desc"
+        }, {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customer_is_cool"
+          },
+          "sortType" : "asc"
         } ]
       }
     },
