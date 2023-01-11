@@ -18,3 +18,7 @@ My first job!
 *** Release notes for version: 0.0.4 ***
 
 Version bump
+
+*** Release notes for version: 0.0.5 ***
+
+Enabling job metrics
