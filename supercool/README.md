@@ -26,3 +26,7 @@ Enabling job metrics
 *** Release notes for version: 0.0.6 ***
 
 Job release
+
+*** Release notes for version: 0.0.7 ***
+
+Variable configuration
