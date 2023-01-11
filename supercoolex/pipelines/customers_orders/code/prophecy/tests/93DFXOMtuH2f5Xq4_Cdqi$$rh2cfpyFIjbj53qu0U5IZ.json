@@ -1,0 +1,115 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "kB-0UzPIFUfDJYRybB827$$E29gtxTKKz2GMJHS2EK1u" : {
+        "values" : [ [ "1", "1", "1.0" ], [ "2", "1", "1.0" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "customer_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "order_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "amount",
+            "type" : "double",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "l5_p0m9fgJ32uNjyozV2h$$jA94aU8AnriJNBCAcOjEM" : {
+        "values" : [ [ "1", "1", "2023-11-1", "1.0" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "order_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "customer_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "account_open_date",
+            "type" : "date",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "amount",
+            "type" : "double",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "PGXmyzeba_Vvs0PSTQsKq$$6T8Y5kGfMVSDpmoJvfI6w" : {
+        "values" : [ [ "1", "2023-10-1" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "customer_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "account_open_date",
+            "type" : "date",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "Unit Test 0",
+    "testType" : "outputRow",
+    "language" : "python"
+  } ],
+  "language" : "python"
+}

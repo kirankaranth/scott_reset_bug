@@ -1,0 +1,140 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: uid
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: pipeline_uri
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: job_uri
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: job_run_uid
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: task_run_uid
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: status
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: fabric_uid
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: time_taken
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: rows_read
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: rows_written
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: created_at
+    type: timestamp
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: created_by
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: run_type
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: input_datasets
+    type:
+      type: array
+      elementType: string
+      containsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: output_datasets
+    type:
+      type: array
+      elementType: string
+      containsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: workflow_code
+    type:
+      type: map
+      keyType: string
+      valueType: string
+      valueContainsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: expired
+    type: boolean
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: branch
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
