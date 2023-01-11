@@ -40,6 +40,32 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
+    }, {
+      "id" : "1409",
+      "name" : "SuperCoolFabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1411",
+      "name" : "SuperCoolProd",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
     } ]
   },
   "processes" : {
