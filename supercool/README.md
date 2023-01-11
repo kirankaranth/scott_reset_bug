@@ -34,3 +34,7 @@ Variable configuration
 *** Release notes for version: 0.0.8 ***
 
 Release!
+
+*** Release notes for version: 0.0.9 ***
+
+Adding customer_is_cool
