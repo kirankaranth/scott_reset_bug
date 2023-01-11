@@ -18,16 +18,16 @@ pipelines:
       - datasets/pipeline_runs
       outputs: []
     dependencies: {}
-  pipelines/report_top_customers:
-    name: report_top_customers
-    description: ''
+  pipelines/SubgraphPipeline:
+    name: SubgraphPipeline
+    description: null
     author: scott+demo3@prophecy.io
     mode: batch
     language: python
-    createdAt: '2023-01-10 18:02:54'
+    createdAt: '2023-01-11 16:28:48'
     datasets:
       inputs:
-      - datasets/customers_orders
+      - datasets/customers
       outputs: []
     dependencies: {}
   pipelines/customers_orders:
@@ -44,16 +44,16 @@ pipelines:
       outputs:
       - datasets/customers_orders
     dependencies: {}
-  pipelines/SubgraphPipeline:
-    name: SubgraphPipeline
-    description: null
+  pipelines/report_top_customers:
+    name: report_top_customers
+    description: ''
     author: scott+demo3@prophecy.io
     mode: batch
     language: python
-    createdAt: '2023-01-11 16:28:48'
+    createdAt: '2023-01-10 18:02:54'
     datasets:
       inputs:
-      - datasets/customers
+      - datasets/customers_orders
       outputs: []
     dependencies: {}
 datasets:

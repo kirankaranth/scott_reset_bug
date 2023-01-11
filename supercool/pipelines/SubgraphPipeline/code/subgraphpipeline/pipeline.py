@@ -9,8 +9,9 @@ from subgraphpipeline.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_customers_0 = customers_0(spark)
     df_TopX_Subgraph_1 = TopX_Subgraph_1(spark, df_customers_0)
+    df_SchemaTransform_3 = SchemaTransform_3(spark, df_customers_0)
     df_SchemaTransform_1 = SchemaTransform_1(spark, df_TopX_Subgraph_1)
-    df_Cleanup_Subgraph_1 = Cleanup_Subgraph_1(spark, df_customers_0)
+    df_Cleanup_Subgraph_1 = Cleanup_Subgraph_1(spark, df_SchemaTransform_3)
     df_SchemaTransform_2 = SchemaTransform_2(spark, df_Cleanup_Subgraph_1)
 
 def main():

@@ -41,6 +41,7 @@ def pipeline(spark: SparkSession) -> None:
         "njxDmpL-AZxfQkJfbmjf6$$ioHwtNMH0FzuI2PDne7IR"
     )
     Customers_Orders(spark, df_SumAmounts)
+    Script_1(spark, df_SumAmounts)
 
 def main():
     spark = SparkSession.builder\

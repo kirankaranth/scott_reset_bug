@@ -73,6 +73,12 @@
     "sourcePort" : "KnEjPZXcfFsa93Lv7e61e$$WP2JkAHS242NnVZQGUEfM",
     "target" : "CJrTkjxKezt0GaymeWYQ4$$rOqyJaqbqDFgtklKNC1v9",
     "targetPort" : "0DQrbSiLx_fAO95ma77h4$$-LO6vXxobFZilkTo76Ijp"
+  }, {
+    "id" : "-aowRENoD2HLOpoBpjKr2",
+    "source" : "CJrTkjxKezt0GaymeWYQ4$$rOqyJaqbqDFgtklKNC1v9",
+    "sourcePort" : "njxDmpL-AZxfQkJfbmjf6$$ioHwtNMH0FzuI2PDne7IR",
+    "target" : "ogCQDlNApeDydmNRNoQT8$$ox_MQMXg2wOMJCmHucG-_",
+    "targetPort" : "c_f5xD74u1P-n1G6PA-Cf$$z0tcsiD95Y0tHPiTf3hYr"
   } ],
   "processes" : {
     "TpAXrbHgsX2zayYfL-U9a$$ftBKqC-25QhQkU4NMf6UI" : {
@@ -425,6 +431,34 @@
       },
       "properties" : {
         "datasetId" : "datasets/customers"
+      }
+    },
+    "ogCQDlNApeDydmNRNoQT8$$ox_MQMXg2wOMJCmHucG-_" : {
+      "id" : "ogCQDlNApeDydmNRNoQT8$$ox_MQMXg2wOMJCmHucG-_",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : 883.3375000000001,
+        "y" : 66.69999999999999,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "c_f5xD74u1P-n1G6PA-Cf$$z0tcsiD95Y0tHPiTf3hYr",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "script" : "in0.createOrReplaceTempView(\"tmpview\")\nspark.sql(\"CREATE VIEW `scottdemo`.`testview2` AS SELECT * FROM tmpview\")",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> None:",
+        "scriptMethodFooter" : "    return "
       }
     }
   },

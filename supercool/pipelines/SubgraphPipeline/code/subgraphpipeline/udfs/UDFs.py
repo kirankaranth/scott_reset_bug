@@ -14,4 +14,8 @@ from prophecy.lookups import (
 )
 
 def registerUDFs(spark: SparkSession):
-    pass
+    spark.udf.register("squaresies", squaresies)
+
+@udf(returnType = IntegerType())
+def squaresies(value: int):
+    return value * value
