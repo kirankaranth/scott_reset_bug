@@ -49,9 +49,17 @@ def pipeline(spark: SparkSession) -> None:
         "TVTWx852GgqwxetK6PEip$$LtgWJdPBWqgQXu-M4HF0Y", 
         "IT7so1xe75UXoiui4aSQM$$IPD3PiwG_H18MDwehkhTS"
     )
-    df_SchemaTransform_2.cache().count()
-    df_SchemaTransform_2.unpersist()
     Script_1(spark, df_SumAmounts)
+    df_SchemaTransform_3 = SchemaTransform_3(spark, df_SchemaTransform_2)
+    df_SchemaTransform_3 = collectMetrics(
+        spark, 
+        df_SchemaTransform_3, 
+        "graph", 
+        "XaVC9pgck1nG0bzdgukNj$$_bJUizP20RHabJp92FcQZ", 
+        "PDr-fQqeL9djHXKkwgVKg$$m0_eicAQEnrxMOYfhiEKt"
+    )
+    df_SchemaTransform_3.cache().count()
+    df_SchemaTransform_3.unpersist()
 
 def main():
     spark = SparkSession.builder\
