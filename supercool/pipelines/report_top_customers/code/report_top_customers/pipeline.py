@@ -23,15 +23,8 @@ def pipeline(spark: SparkSession) -> None:
         "fMVxortz3BGKVEB--u8VU$$9nns4Mv-GFMjg5cu41vJ5", 
         "n8Lt1SS_t2xg2F0hGDh14$$aqPkEXWP6nDoOI3akIhbC"
     )
-    df_TopX = TopX(spark, df_ByTotalAmount)
-    df_TopX = collectMetrics(
-        spark, 
-        df_TopX, 
-        "graph", 
-        "KtcK_QDcAsjlBBs53GY9Z$$CQIT4GVD1pUimk2ckV-Vx", 
-        "XQk-NH3mYQayhQML12gS9$$kCrgutcwloaIB_W4IVXEp"
-    )
-    df_Reformat_1 = Reformat_1(spark, df_TopX)
+    df_TopX_Subgraph = TopX_Subgraph(spark, df_ByTotalAmount)
+    df_Reformat_1 = Reformat_1(spark, df_TopX_Subgraph)
     df_Reformat_1 = collectMetrics(
         spark, 
         df_Reformat_1, 

@@ -31,15 +31,8 @@ def pipeline(spark: SparkSession) -> None:
         "93DFXOMtuH2f5Xq4_Cdqi$$rh2cfpyFIjbj53qu0U5IZ", 
         "l5_p0m9fgJ32uNjyozV2h$$jA94aU8AnriJNBCAcOjEM"
     )
-    df_Cleanup = Cleanup(spark, df_By_CustomerId)
-    df_Cleanup = collectMetrics(
-        spark, 
-        df_Cleanup, 
-        "graph", 
-        "qOX5qQ928aAIal-UUfA9J$$czsiISBM9YU4iL1IdXhfS", 
-        "RhxbI6pX4n5W_NTjnD7x1$$OAAjBDpVhbjDwe_MpDeCi"
-    )
-    df_SumAmounts = SumAmounts(spark, df_Cleanup)
+    df_Account_Length_Subgraph = Account_Length_Subgraph(spark, df_By_CustomerId)
+    df_SumAmounts = SumAmounts(spark, df_Account_Length_Subgraph)
     df_SumAmounts = collectMetrics(
         spark, 
         df_SumAmounts, 

@@ -1,0 +1,73 @@
+{
+  "id" : "Xkl2zS0i4JNhNIZ0I5Tqx",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "-2pAdxOPsmZHHTfL0STUD",
+      "slug" : "in0"
+    } ],
+    "outputs" : [ {
+      "id" : "S8--Jz1zPL5eDSldmqqSe",
+      "slug" : "out0"
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "com.contoso"
+  },
+  "connections" : [ {
+    "id" : "68fTeQ7LghMLzlkUBNrja",
+    "source" : "Xkl2zS0i4JNhNIZ0I5Tqx",
+    "sourcePort" : "-2pAdxOPsmZHHTfL0STUD",
+    "target" : "ab3GRGoBynvwJH4I4T_3F",
+    "targetPort" : "4D9Nrt2rXKWx1UnzCMbLL"
+  }, {
+    "id" : "mvDOPbL0rqGJ6fH53oW1x",
+    "source" : "ab3GRGoBynvwJH4I4T_3F",
+    "sourcePort" : "wWKSxV7JdJffeMT8rqp2Y",
+    "target" : "Xkl2zS0i4JNhNIZ0I5Tqx",
+    "targetPort" : "S8--Jz1zPL5eDSldmqqSe"
+  } ],
+  "processes" : {
+    "ab3GRGoBynvwJH4I4T_3F" : {
+      "id" : "ab3GRGoBynvwJH4I4T_3F",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "TopX_1",
+        "slug" : "TopX_1",
+        "x" : 866.4,
+        "y" : 312.79999999999995,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4D9Nrt2rXKWx1UnzCMbLL",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "wWKSxV7JdJffeMT8rqp2Y",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "limit" : "'$top_count'"
+      }
+    }
+  }
+}

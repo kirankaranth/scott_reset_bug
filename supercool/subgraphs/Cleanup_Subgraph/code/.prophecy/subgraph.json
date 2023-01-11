@@ -1,0 +1,90 @@
+{
+  "id" : "TpAXrbHgsX2zayYfL-U9a",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "HKAB9OGPuGZn3HRDH-V5L",
+      "slug" : "in0"
+    } ],
+    "outputs" : [ {
+      "id" : "KnEjPZXcfFsa93Lv7e61e",
+      "slug" : "out0"
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "com.contoso"
+  },
+  "connections" : [ {
+    "id" : "ca3-f8kP2Pvnco9UjFiTY",
+    "source" : "TpAXrbHgsX2zayYfL-U9a",
+    "sourcePort" : "HKAB9OGPuGZn3HRDH-V5L",
+    "target" : "TZcrrkZr_m3cEUPqK22vx",
+    "targetPort" : "eFHW1a-i8gZeqEya_igTf"
+  }, {
+    "id" : "LW1Pkql4oF7i7uiEE1OM9",
+    "source" : "TZcrrkZr_m3cEUPqK22vx",
+    "sourcePort" : "xB2doqoBekW-qnLk6owRm",
+    "target" : "TpAXrbHgsX2zayYfL-U9a",
+    "targetPort" : "KnEjPZXcfFsa93Lv7e61e"
+  } ],
+  "processes" : {
+    "TZcrrkZr_m3cEUPqK22vx" : {
+      "id" : "TZcrrkZr_m3cEUPqK22vx",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : 674.5357116699222,
+        "y" : 245.90713500976557,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eFHW1a-i8gZeqEya_igTf",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "xB2doqoBekW-qnLk6owRm",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "eFHW1a-i8gZeqEya_igTf$$1kxcZHX6DU7uhpPYMlFLH##account_open_date" ],
+        "transformations" : [ {
+          "kind" : "AddReplaceColumn",
+          "AddReplaceColumn" : {
+            "sourceColumn" : "account_length_days",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "datediff(current_date(), account_open_date)"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          }
+        } ]
+      }
+    }
+  }
+}

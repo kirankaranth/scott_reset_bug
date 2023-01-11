@@ -5,20 +5,6 @@ author: scott+demo3@prophecy.io
 language: python
 buildSystem: wheel
 pipelines:
-  pipelines/customers_orders:
-    name: customers_orders
-    description: ''
-    author: scott+demo3@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2023-01-10 15:50:30'
-    datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
-      outputs:
-      - datasets/customers_orders
-    dependencies: {}
   pipelines/MyMetaPipeline:
     name: MyMetaPipeline
     description: ''
@@ -42,6 +28,32 @@ pipelines:
     datasets:
       inputs:
       - datasets/customers_orders
+      outputs: []
+    dependencies: {}
+  pipelines/customers_orders:
+    name: customers_orders
+    description: ''
+    author: scott+demo3@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-10 15:50:30'
+    datasets:
+      inputs:
+      - datasets/customers
+      - datasets/orders
+      outputs:
+      - datasets/customers_orders
+    dependencies: {}
+  pipelines/SubgraphPipeline:
+    name: SubgraphPipeline
+    description: null
+    author: scott+demo3@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-11 16:28:48'
+    datasets:
+      inputs:
+      - datasets/customers
       outputs: []
     dependencies: {}
 datasets:
@@ -172,7 +184,19 @@ jobs:
     createdAt: '2023-01-11 15:53:15'
     author: scott+demo3@prophecy.io
 libraries: []
-subgraphs: {}
+subgraphs:
+  subgraphs/TopX_Subgraph:
+    name: TopX_Subgraph
+    description: ''
+    author: scott+demo3@prophecy.io
+    language: python
+    createdAt: '2023-01-11 16:28:19'
+  subgraphs/Cleanup_Subgraph:
+    name: Account_Length_Subgraph
+    description: null
+    author: scott+demo3@prophecy.io
+    language: python
+    createdAt: '2023-01-11 16:34:12'
 sqlModels: {}
 sqlPipeline: null
 dependencies: []
