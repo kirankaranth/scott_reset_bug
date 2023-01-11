@@ -30,3 +30,7 @@ Job release
 *** Release notes for version: 0.0.7 ***
 
 Variable configuration
+
+*** Release notes for version: 0.0.8 ***
+
+Release!
