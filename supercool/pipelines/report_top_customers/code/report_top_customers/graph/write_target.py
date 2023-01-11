@@ -4,5 +4,7 @@ from pyspark.sql.types import *
 from report_top_customers.config.ConfigStore import *
 from report_top_customers.udfs.UDFs import *
 
-def customers_orders_1(spark: SparkSession) -> DataFrame:
-    return spark.sql(f"SELECT * FROM scottdemo.customers_orders WHERE customer_id == 1")
+def write_target(spark: SparkSession, in0: DataFrame):
+    in0.write.format("delta").mode("overwrite").saveAsTable(f"scottdemo.top_customers{Config.top_count}")
+
+    return 

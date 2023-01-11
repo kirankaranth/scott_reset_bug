@@ -30,3 +30,10 @@ schema:
       description: ''
       mappings: []
       tags: []
+  - name: current_date
+    type: date
+    nullable: false
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

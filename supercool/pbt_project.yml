@@ -5,19 +5,6 @@ author: scott+demo3@prophecy.io
 language: python
 buildSystem: wheel
 pipelines:
-  pipelines/report_top_customers:
-    name: report_top_customers
-    description: ''
-    author: scott+demo3@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2023-01-10 18:02:54'
-    datasets:
-      inputs:
-      - datasets/customers_orders
-      outputs:
-      - datasets/report_top_customers
-    dependencies: {}
   pipelines/customers_orders:
     name: customers_orders
     description: ''
@@ -32,6 +19,31 @@ pipelines:
       outputs:
       - datasets/customers_orders
     dependencies: {}
+  pipelines/MyMetaPipeline:
+    name: MyMetaPipeline
+    description: ''
+    author: scott+demo3@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-11 15:16:50'
+    datasets:
+      inputs:
+      - datasets/component_runs
+      - datasets/pipeline_runs
+      outputs: []
+    dependencies: {}
+  pipelines/report_top_customers:
+    name: report_top_customers
+    description: ''
+    author: scott+demo3@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-10 18:02:54'
+    datasets:
+      inputs:
+      - datasets/customers_orders
+      outputs: []
+    dependencies: {}
 datasets:
   datasets/orders:
     name: orders
@@ -45,18 +57,6 @@ datasets:
         description: ''
         author: scott+demo3@prophecy.io
         createdAt: '2023-01-10 16:00:25'
-  datasets/customers:
-    name: customers
-    description: ''
-    author: scott+demo3@prophecy.io
-    createdAt: '2023-01-10 16:02:38'
-    physicalDatasets:
-      dev:
-        fabricId: 1405
-        datasetType: File
-        description: ''
-        author: scott+demo3@prophecy.io
-        createdAt: '2023-01-10 16:02:38'
   datasets/customers_orders:
     name: customers_orders
     description: ''
@@ -69,6 +69,18 @@ datasets:
         description: ''
         author: scott+demo3@prophecy.io
         createdAt: '2023-01-10 16:26:33'
+  datasets/customers:
+    name: customers
+    description: ''
+    author: scott+demo3@prophecy.io
+    createdAt: '2023-01-10 16:02:38'
+    physicalDatasets:
+      dev:
+        fabricId: 1405
+        datasetType: File
+        description: ''
+        author: scott+demo3@prophecy.io
+        createdAt: '2023-01-10 16:02:38'
   datasets/report_top_customers:
     name: report_top_customers
     description: ''
@@ -81,6 +93,30 @@ datasets:
         description: ''
         author: scott+demo3@prophecy.io
         createdAt: '2023-01-10 18:04:58'
+  datasets/pipeline_runs:
+    name: pipeline_runs
+    description: ''
+    author: scott+demo3@prophecy.io
+    createdAt: '2023-01-11 15:21:11'
+    physicalDatasets:
+      dev:
+        fabricId: 1405
+        datasetType: File
+        description: ''
+        author: scott+demo3@prophecy.io
+        createdAt: '2023-01-11 15:21:11'
+  datasets/component_runs:
+    name: component_runs
+    description: ''
+    author: scott+demo3@prophecy.io
+    createdAt: '2023-01-11 15:24:50'
+    physicalDatasets:
+      dev:
+        fabricId: 1405
+        datasetType: File
+        description: ''
+        author: scott+demo3@prophecy.io
+        createdAt: '2023-01-11 15:24:50'
 templates: {}
 jobs:
   jobs/CustomersReportJob:
@@ -99,6 +135,7 @@ jobs:
       onSuccess: false
       onFailure: false
     pipelines:
+    - pipelines/MyMetaPipeline
     - pipelines/customers_orders
     - pipelines/report_top_customers
     jobClusterMode:
