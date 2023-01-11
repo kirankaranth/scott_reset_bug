@@ -85,6 +85,12 @@
     "sourcePort" : "l5_p0m9fgJ32uNjyozV2h$$jA94aU8AnriJNBCAcOjEM",
     "target" : "TVTWx852GgqwxetK6PEip$$LtgWJdPBWqgQXu-M4HF0Y",
     "targetPort" : "gtqHmzNldFbZClGd9UgTU$$-cV1c1QQbwFGMV7hqgneC"
+  }, {
+    "id" : "Rckw5E7PonfeVp99SiI9K",
+    "source" : "TVTWx852GgqwxetK6PEip$$LtgWJdPBWqgQXu-M4HF0Y",
+    "sourcePort" : "IT7so1xe75UXoiui4aSQM$$IPD3PiwG_H18MDwehkhTS",
+    "target" : "XaVC9pgck1nG0bzdgukNj$$_bJUizP20RHabJp92FcQZ",
+    "targetPort" : "DL8Br9gI-w2lkfHiFBRc7$$8Rqx0VcGbMuWu42F3eyBO"
   } ],
   "processes" : {
     "TpAXrbHgsX2zayYfL-U9a$$ftBKqC-25QhQkU4NMf6UI" : {
@@ -495,6 +501,36 @@
         "script" : "in0.createOrReplaceTempView(\"tmpview\")\nspark.sql(\"CREATE VIEW `scottdemo`.`testview2` AS SELECT * FROM tmpview\")",
         "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> None:",
         "scriptMethodFooter" : "    return "
+      }
+    },
+    "XaVC9pgck1nG0bzdgukNj$$_bJUizP20RHabJp92FcQZ" : {
+      "id" : "XaVC9pgck1nG0bzdgukNj$$_bJUizP20RHabJp92FcQZ",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_3",
+        "slug" : "SchemaTransform_3",
+        "x" : 667.8187500000001,
+        "y" : 14.199999999999989,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "DL8Br9gI-w2lkfHiFBRc7$$8Rqx0VcGbMuWu42F3eyBO",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "PDr-fQqeL9djHXKkwgVKg$$m0_eicAQEnrxMOYfhiEKt",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "transformations" : [ ]
       }
     }
   },
