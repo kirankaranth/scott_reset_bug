@@ -1,0 +1,24 @@
+name: SuperImportantProject
+description: ''
+version: 0.0.1-SNAPSHOT
+author: scott+demo2@prophecy.io
+language: python
+buildSystem: wheel
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies:
+  '4946':
+    projectUID: 4946
+    projectName: MySuperCoolProject
+    repositoryPath: gitUri=https://github.com/slyons/jnj-demo&subPath=/supercool
+    version: MySuperCoolProject/0.0.9
+    author: null
+    createdAt: '2023-01-12 18:38:44'
+pipelineConfigurations: {}
