@@ -1,6 +1,6 @@
 name: MySuperCoolProject
 description: ''
-version: 0.0.9
+version: 0.0.9-SNAPSHOT
 author: scott+demo3@prophecy.io
 language: python
 buildSystem: wheel
@@ -62,6 +62,7 @@ datasets:
     description: ''
     author: scott+demo3@prophecy.io
     createdAt: '2023-01-10 16:00:25'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1405
@@ -74,6 +75,7 @@ datasets:
     description: ''
     author: scott+demo3@prophecy.io
     createdAt: '2023-01-10 16:26:33'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1405
@@ -86,6 +88,7 @@ datasets:
     description: ''
     author: scott+demo3@prophecy.io
     createdAt: '2023-01-10 16:02:38'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1405
@@ -98,6 +101,7 @@ datasets:
     description: ''
     author: scott+demo3@prophecy.io
     createdAt: '2023-01-10 18:04:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1405
@@ -110,6 +114,7 @@ datasets:
     description: ''
     author: scott+demo3@prophecy.io
     createdAt: '2023-01-11 15:21:11'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1405
@@ -122,6 +127,7 @@ datasets:
     description: ''
     author: scott+demo3@prophecy.io
     createdAt: '2023-01-11 15:24:50'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1405
@@ -190,12 +196,14 @@ subgraphs:
     description: ''
     author: scott+demo3@prophecy.io
     language: python
+    mode: batch
     createdAt: '2023-01-11 16:28:19'
   subgraphs/Cleanup_Subgraph:
     name: Account_Length_Subgraph
     description: null
     author: scott+demo3@prophecy.io
     language: python
+    mode: batch
     createdAt: '2023-01-11 16:34:12'
 sqlModels: {}
 sqlPipeline: null
